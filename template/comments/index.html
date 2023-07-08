@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VoxPop</title>
+</head>
+
+<body>
+    <a href="/comments/new">Leave a comment</a>
+    <p>All comments</p>
+    <ul>
+        {% for comment in comments[::-1] %}
+            <li>Comment: {{ comment.text }}</li> 
+                Category: {{ comment.category }} <br>
+                Date: {{ comment.date.hour }}:{{ comment.date.minute }}<br><br>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

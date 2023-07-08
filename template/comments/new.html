@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VoxPop</title>
+</head>
+<body>
+    <h1>VoxPop</h1>
+    <form action="/comments/new" method="post">
+        <textarea id="comment" name="text" rows="4" cols="50" placeholder="Leave a comment"></textarea><br><br>
+        
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="Positive">Positive</option>
+            <option value="Negative">Negative</option>
+        </select><br><br>
+        
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>
