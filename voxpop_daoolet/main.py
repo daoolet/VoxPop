@@ -17,12 +17,16 @@ def index(request: Request):
 
 
 @app.get("/comments")
-def get_comments(request: Request):
+def get_comments(request: Request, page: int = 1, limit: int = 4):
     comments = repo.get_all()
+    start = (page - 1) * limit
+    end = limit * page
+
     context = {
         "request": request,
-        "comments": comments
+        "comments": comments[start: end]
     }
+
     return templates.TemplateResponse("comments/index.html", context)
 
 
